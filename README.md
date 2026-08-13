@@ -1,2 +1,2 @@
-# IT1A_Rosario
+# ITCS102_Codes
 For School purposes
