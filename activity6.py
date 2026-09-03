@@ -14,3 +14,4 @@ x = int(input("What grades do you prefer?:"))
 
 point = 50-x
 print("so you need to gain", point, "out of 50% to achieve your prefer grades")
+ 
