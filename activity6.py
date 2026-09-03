@@ -7,10 +7,10 @@ print("so you need to gain", sum, "out of 70% to achieve your prefer grades")
 
 z = int(input("What grades do you prefer?:"))
 
-round = z-60
+round = 60-z
 print("so you need to gain", round, "out of 60% to achieve your prefer grades")
 
 x = int(input("What grades do you prefer?:"))
 
-point = y-50
+point = 50-x
 print("so you need to gain", point, "out of 50% to achieve your prefer grades")
