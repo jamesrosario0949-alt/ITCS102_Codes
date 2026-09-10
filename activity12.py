@@ -1,10 +1,12 @@
 # if and else operator
 
+import getpass
+
 username = "JAMES"
 password = "ROSARIO"
 
 Iusername = input("Input your username:  ")
-Ipassword = input("Input your password:  ")
+Ipassword = getpass.getpass("Input your password:  ")
 
 if Iusername == username:
      if Ipassword == password:
