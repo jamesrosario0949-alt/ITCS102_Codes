@@ -25,10 +25,10 @@ if is_frag == "True":
 else:
     print("Fragile: False")
     
-if w <= 2 and d <= 100 and not is_express and not is_international:
+if w <= 2 and d <= 100 and is_express == "False" and is_international == "False":
     print("Free shipping")
     print("the total cost; 0.00 $ \n")
-elif is_express == "yes" and is_international == "yes":
+elif is_express == "True" and is_international == "False":
     print("Shipping rate international express" )
     print("the total cost:", (base_cost * 1.40) + 50 )
 elif is_express or (is_international and w > 20):
