@@ -1,0 +1,25 @@
+driver_name = str(input("What is your name;   "))
+license_plate = str(input("licence plate:   "))
+hours_parked = float(input("How many hours it takes to park:"))
+is_ev = bool(input("ev True:  "))
+is_weekend = bool(input("weekend true or blank:  "))
+has_validation = bool(input("validation true\\'' "))
+is_member = bool(input("member? true or '' "))
+billable_hours = float(hours_parked)
+base_fee = (billable_hours * 5.00) + 5.00
+totalfee = 0.00
+
+if hours_parked >= 0.5 or has_validation and hours_parked >= 2.0:
+    totalfee = 0.00
+    print("Free exit and total ammount to pay is", totalfee)
+elif hours_parked >= 12:
+    totalfee = 55.00
+    print("Overnight Flat Rate fee;", totalfee)
+elif is_member == True and is_weekend == True:
+    print(f"total amount: {base_fee * 0.60}")
+elif is_member == True or is_ev == True:
+    print(f"total amount: {base_fee * 0.85}")
+elif is_weekend == True:
+    print(f"total amount: {base_fee * 8.00}")
+else:
+    print(f"standard rate --- total amount: {base_fee}")
