@@ -21,7 +21,11 @@ if age >= 21 and yrs_business >= 2.0 and has_default == "False":
                 print("Collater", collateral_name, "Collater Value", collateral_val, "is Accepted")
             else:
                 print("You Have not meet the Requirements in Collateral", collateral_name)
-            if 
+            if revenue % 5000 != 0:
+                max_loan += 250
+                print("you are have addition fee", max_loan)
+            else:
+                print("You don't have addition fee")
         elif credit <= 620 and credit < 720: #tier 2
             print("You are meet the Credit Requirements")
             max_loan = 1.5 * revenue
@@ -34,7 +38,11 @@ if age >= 21 and yrs_business >= 2.0 and has_default == "False":
                         print("Collater", collateral_name, "Collater Value", collateral_val, "is Accepted")
                     else:
                         print("You Have not meet the Requirements in Collateral", collateral_name)
-                        
+                    if revenue % 5000 != 0:
+                        max_loan += 250
+                        print("you are have addition fee", max_loan)
+                    else:
+                        print("You don't have addition fee")    
             else:
                 base_fee = max_loan * 3.5
                 print("You have higher fee", base_fee)
