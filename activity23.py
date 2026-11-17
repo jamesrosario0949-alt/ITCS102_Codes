@@ -1,4 +1,4 @@
-# JEEPNEY SIMULATOR (Interactive)
+# JEEPNEY SIMULATOR (Interactive|)
 route = ["Terminal", "Perez Park", "Pacific Mall"]
 passengers = []
 SEATS = 6
