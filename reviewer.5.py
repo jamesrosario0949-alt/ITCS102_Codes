@@ -1,55 +1,71 @@
-age = int(input("Age:   "))
-revenue = float(input("Revenue?:    "))
-credit = int(input("credit?:    "))
-yrs_business = float(input("Business Year?:    "))
-has_default = bool(input("Default True/False:   "))
-collateral_name = str(input("Name of the item:    "))
-collateral_val = float(input("Value of the item:    "))
 
-max_loan = 0
-base_fee = 0
+# JEEPNEY SIMULATOR (Interactive)
+route = ["Terminal", "Perez Park", "Pacific Mall"]
+passengers = []
+SEATS = 6
+FARE = 13
+total = 0
 
-if age >= 21 and yrs_business >= 2.0 and has_default == "False":
-    print("Eligible <:")
-    if credit >= 720: #tier 1
-        print("Credit is too High")
-        max_loan = 3 * revenue
-        if revenue >= 50000: 
-            base_fee = max_loan * 0.015
-            print("You are hace a lower Income therefore, your fee is:", base_fee)
-            if collateral_name >= max_loan:
-                print("Collater", collateral_name, "Collater Value", collateral_val, "is Accepted")
-            else:
-                print("You Have not meet the Requirements in Collateral", collateral_name)
-            if revenue % 5000 != 0:
-                max_loan += 250
-                print("you are have addition fee", max_loan)
-            else:
-                print("You don't have addition fee")
-        elif credit <= 620 and credit < 720: #tier 2
-            print("You are meet the Credit Requirements")
-            max_loan = 1.5 * revenue
-            if yrs_business >= 5:
-                base_fee = max_loan * 2
-                print("You have low fee:", base_fee)
-                if credit < 620: #tier 3
-                    print("You have lower credit")
-                    if collateral_name >= max_loan:
-                        print("Collater", collateral_name, "Collater Value", collateral_val, "is Accepted")
-                    else:
-                        print("You Have not meet the Requirements in Collateral", collateral_name)
-                    if revenue % 5000 != 0:
-                        max_loan += 250
-                        print("you are have addition fee", max_loan)
-                    else:
-                        print("You don't have addition fee")    
-            else:
-                base_fee = max_loan * 3.5
-                print("You have higher fee", base_fee)
+while True:
+    print()
+    print("Sakay:", passengers)
+    print(len(passengers), "of", SEATS, "seats")
+    print("1 Sakay 2 Priority seat 3 Para po")
+    print("4 Baba sa pinto 5 Baba sa harap")
+    print("6 Seat check 7 Balikan 8 Exit")
+    choice = input("Choice: ")
+
+    if choice == "1":
+        if len(passengers) == SEATS:
+            print("Puno na!")
         else:
-            base_fee = max_loan * 2.5
-            print("You are Have a higher Income", base_fee)
-    else: 
-        print("Credit is too Low")
-else:
-    print("You are not Eligible")
+            name = input("Name: ")
+            passengers.append(name)
+            total = total + FARE
+            print(name, "boarded at the back.")
+
+    elif choice == "2":
+        if len(passengers) == SEATS:
+            print("Puno na!")
+        else:
+            name = input("Name: ")
+            passengers.insert(0, name)
+            total = total + FARE
+            print(name, "took the priority seat.")
+
+    elif choice == "3":
+        name = input("Who is getting off? ")
+        if name in passengers:
+            passengers.remove(name)
+            print(name, "got off. Ingat!")
+        else:
+            print(name, "is not on this jeep.")
+
+    elif choice == "4":
+        if len(passengers) == 0:
+            print("The jeep is empty.")
+        else:
+            left = passengers.pop()
+            print(left, "got off at the door.")
+
+    elif choice == "5":
+        if len(passengers) == 0:
+            print("The jeep is empty.")
+        else:
+            front = passengers.pop(0)
+            print(front, "got off at the front.")
+
+    elif choice == "6":
+        for i in range(len(passengers)):
+            print("Seat", i + 1, passengers[i])
+
+    elif choice == "7":
+        route.reverse()
+        print("Route:", route)
+
+    elif choice == "8":
+        print("Total fare today:", total)
+        break
+
+    else:
+        print("Invalid choice.")
