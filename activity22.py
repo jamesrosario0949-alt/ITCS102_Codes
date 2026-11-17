@@ -1,6 +1,6 @@
 fruts_type = ["Sweet", "Bitter", "balance"]
 fruits = []
-
+ 
 while True:
     ans = input("are you eat fruits yes/no:   ")
 
