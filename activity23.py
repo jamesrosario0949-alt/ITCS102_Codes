@@ -64,7 +64,7 @@ while True:
 
     elif choice == "8":
         print("Total fare today:", total)
-        break
-
+        
     else:
         print("Invalid choice.")
+        break
